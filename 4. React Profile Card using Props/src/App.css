@@ -37,6 +37,12 @@
     background: #ffffff;
     border: 1px solid #ddd5cc;
     box-shadow: 12px 12px 0 #d9cec3;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 16px 16px 0 #cfc2b6;
 }
 
 .profile-image {
@@ -85,11 +91,12 @@
 
 .profile-button {
     padding: 12px 22px;
-    border: none;
+    border: 1px solid #292521;
     background: #292521;
     color: #ffffff;
     font-size: 13px;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
 .profile-button:hover {
@@ -110,10 +117,19 @@
         align-items: flex-start;
         gap: 30px;
         padding: 25px;
+        box-shadow: 8px 8px 0 #d9cec3;
+    }
+
+    .profile-card:hover {
+        box-shadow: 10px 10px 0 #cfc2b6;
     }
 
     .profile-image {
         width: 100%;
         height: 180px;
+    }
+
+    .profile-content {
+        max-width: none;
     }
 }
