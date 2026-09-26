@@ -51,17 +51,25 @@ function App() {
 
                 <div className="counter-controls">
 
-                    <button onClick={decreaseCount}>
-                        −
-                    </button>
+                   <button
+    onClick={decreaseCount}
+    aria-label="Decrease counter"
+>
+    −
+</button>
 
-                    <button onClick={resetCount}>
-                        Reset
-                    </button>
+<button
+    onClick={resetCount}
+>
+    Reset
+</button>
 
-                    <button onClick={increaseCount}>
-                        +
-                    </button>
+<button
+    onClick={increaseCount}
+    aria-label="Increase counter"
+>
+    +
+</button>
 
                 </div>
 
