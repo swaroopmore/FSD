@@ -1,0 +1,131 @@
+.form-page {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 70px 25px;
+}
+
+.form-heading {
+    max-width: 650px;
+    margin-bottom: 50px;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #7b6758;
+}
+
+.form-heading h1 {
+    margin-bottom: 18px;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.form-heading > p:last-child {
+    max-width: 520px;
+    color: #716961;
+    line-height: 1.7;
+}
+
+.form-area {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-form {
+    padding: 35px;
+    background: #ffffff;
+    border-top: 4px solid #292521;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d7d0c8;
+    background: #faf9f7;
+    color: #292521;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #7b6758;
+    background: #ffffff;
+}
+
+.contact-form button {
+    padding: 13px 24px;
+    border: none;
+    background: #292521;
+    color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #4d443d;
+}
+
+.form-note {
+    padding: 25px;
+    border-left: 2px solid #c9b9aa;
+}
+
+.form-note span {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #9a8676;
+}
+
+.form-note p {
+    color: #716961;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+@media (max-width: 750px) {
+    .form-page {
+        padding: 45px 20px;
+    }
+
+    .form-heading h1 {
+        font-size: 38px;
+    }
+
+    .form-area {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .form-note {
+        border-left: none;
+        border-top: 2px solid #c9b9aa;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+}
