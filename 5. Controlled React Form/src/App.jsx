@@ -8,6 +8,8 @@ function App() {
         message: ""
     });
 
+    const [submitted, setSubmitted] = useState(false);
+
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -16,6 +18,26 @@ function App() {
             ...formData,
             [name]: value
         });
+
+        setSubmitted(false);
+    }
+
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        setSubmitted(true);
+    }
+
+
+    function handleReset() {
+        setFormData({
+            name: "",
+            email: "",
+            message: ""
+        });
+
+        setSubmitted(false);
     }
 
 
@@ -36,7 +58,10 @@ function App() {
 
             <section className="form-area">
 
-                <form className="contact-form">
+                <form
+                    className="contact-form"
+                    onSubmit={handleSubmit}
+                >
 
                     <div className="form-group">
                         <label htmlFor="name">Your Name</label>
@@ -80,9 +105,28 @@ function App() {
                     </div>
 
 
-                    <button type="submit">
-                        Send Message
-                    </button>
+                    <div className="button-row">
+
+                        <button type="submit">
+                            Send Message
+                        </button>
+
+                        <button
+                            type="button"
+                            className="reset-button"
+                            onClick={handleReset}
+                        >
+                            Clear
+                        </button>
+
+                    </div>
+
+
+                    {submitted && (
+                        <p className="success-message">
+                            Your message has been submitted successfully.
+                        </p>
+                    )}
 
                 </form>
 
@@ -91,8 +135,8 @@ function App() {
                     <span>01</span>
 
                     <p>
-                        Your information is being managed
-                        directly through React state.
+                        Your information is managed directly
+                        through React state.
                     </p>
                 </div>
 
@@ -104,6 +148,7 @@ function App() {
                 <p className="preview-label">LIVE PREVIEW</p>
 
                 <div className="preview-content">
+
                     <h2>
                         {formData.name || "Your name"}
                     </h2>
@@ -115,6 +160,7 @@ function App() {
                     <p>
                         {formData.message || "Your message will appear here."}
                     </p>
+
                 </div>
 
             </section>

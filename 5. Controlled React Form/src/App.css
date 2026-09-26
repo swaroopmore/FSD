@@ -165,3 +165,40 @@
 .preview-content p:last-child {
     margin-bottom: 0;
 }
+
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+.reset-button {
+    padding: 13px 24px;
+    border: 1px solid #292521;
+    background: transparent;
+    color: #292521;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background: #eee9e3;
+}
+
+.success-message {
+    margin-top: 15px;
+    padding: 11px 13px;
+    border-left: 3px solid #52745d;
+    background: #f1f7f2;
+    color: #52745d;
+    font-size: 13px;
+}
+
+@media (max-width: 500px) {
+    .button-row {
+        flex-direction: column;
+    }
+
+    .button-row button {
+        width: 100%;
+    }
+}
