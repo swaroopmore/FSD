@@ -28,9 +28,27 @@ function divideNumbers(firstNumber, secondNumber) {
 
 
 function calculateResult() {
-    const firstNumber = Number(firstNumberInput.value);
-    const secondNumber = Number(secondNumberInput.value);
+    const firstValue = firstNumberInput.value.trim();
+    const secondValue = secondNumberInput.value.trim();
+
+    if (firstValue === "" || secondValue === "") {
+        resultDisplay.textContent = "Please enter both numbers.";
+        return;
+    }
+
+    const firstNumber = Number(firstValue);
+    const secondNumber = Number(secondValue);
     const operation = operationInput.value;
+
+    if (Number.isNaN(firstNumber) || Number.isNaN(secondNumber)) {
+        resultDisplay.textContent = "Please enter valid numbers.";
+        return;
+    }
+
+    if (operation === "divide" && secondNumber === 0) {
+        resultDisplay.textContent = "Cannot divide by zero.";
+        return;
+    }
 
     let result;
 
@@ -50,9 +68,13 @@ function calculateResult() {
         case "divide":
             result = divideNumbers(firstNumber, secondNumber);
             break;
+
+        default:
+            resultDisplay.textContent = "Please select an operation.";
+            return;
     }
 
-    resultDisplay.textContent = result;
+    resultDisplay.textContent = `Result: ${result}`;
 }
 
 
