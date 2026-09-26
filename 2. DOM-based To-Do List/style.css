@@ -184,3 +184,15 @@ body {
         min-height: 46px;
     }
 }
+.task-item {
+    display: flex;
+    align-items: center;
+    min-height: 58px;
+    padding: 15px 18px;
+    border: 1px solid #d8d1c4;
+    background: #fffdf8;
+}
+
+.task-item span {
+    font-size: 15px;
+}
