@@ -1,0 +1,105 @@
+.counter-page {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 25px;
+}
+
+.counter-header {
+    margin-bottom: 55px;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #727272;
+}
+
+.counter-header h1 {
+    margin-bottom: 18px;
+    font-size: 58px;
+    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+
+.counter-header p:last-child {
+    color: #777777;
+    font-size: 15px;
+}
+
+.counter-box {
+    max-width: 600px;
+    padding: 45px;
+    border: 1px solid #d5d5d5;
+    background: #ffffff;
+}
+
+.counter-label {
+    margin-bottom: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #777777;
+}
+
+.counter-display {
+    margin-bottom: 35px;
+    font-size: 100px;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.counter-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.counter-controls button {
+    min-width: 70px;
+    min-height: 45px;
+    padding: 0 18px;
+    border: 1px solid #252525;
+    background: #ffffff;
+    color: #252525;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.counter-controls button:first-child,
+.counter-controls button:last-child {
+    font-size: 24px;
+}
+
+.counter-controls button:hover {
+    background: #252525;
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .counter-page {
+        padding: 50px 20px;
+    }
+
+    .counter-header h1 {
+        font-size: 44px;
+    }
+
+    .counter-box {
+        padding: 30px;
+    }
+
+    .counter-display {
+        font-size: 75px;
+    }
+
+    .counter-controls {
+        flex-wrap: wrap;
+    }
+
+    .counter-controls button {
+        flex: 1;
+    }
+}
