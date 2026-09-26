@@ -130,3 +130,19 @@ body {
         padding: 25px;
     }
 }
+
+.form-group input.input-error {
+    border-color: #b44d4d;
+    background: #fff8f8;
+}
+
+.form-group input.input-success {
+    border-color: #367052;
+    background: #f7fcf8;
+}
+
+.success-message {
+    padding: 10px;
+    border: 1px solid #b9d8c3;
+    background: #f1f9f3;
+}

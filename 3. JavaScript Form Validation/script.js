@@ -15,6 +15,20 @@ const confirmPasswordError = document.getElementById("confirmPasswordError");
 const successMessage = document.getElementById("successMessage");
 
 
+function setError(input, errorElement, message) {
+    input.classList.add("input-error");
+    input.classList.remove("input-success");
+    errorElement.textContent = message;
+}
+
+
+function setSuccess(input, errorElement) {
+    input.classList.remove("input-error");
+    input.classList.add("input-success");
+    errorElement.textContent = "";
+}
+
+
 registrationForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -27,6 +41,12 @@ registrationForm.addEventListener("submit", function (event) {
     confirmPasswordError.textContent = "";
     successMessage.textContent = "";
 
+    nameInput.classList.remove("input-error", "input-success");
+    emailInput.classList.remove("input-error", "input-success");
+    phoneInput.classList.remove("input-error", "input-success");
+    passwordInput.classList.remove("input-error", "input-success");
+    confirmPasswordInput.classList.remove("input-error", "input-success");
+
 
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
@@ -36,56 +56,104 @@ registrationForm.addEventListener("submit", function (event) {
 
 
     if (name === "") {
-        nameError.textContent = "Please enter your full name.";
+        setError(nameInput, nameError, "Please enter your full name.");
         isValid = false;
     } else if (name.length < 3) {
-        nameError.textContent = "Name must contain at least 3 characters.";
+        setError(
+            nameInput,
+            nameError,
+            "Name must contain at least 3 characters."
+        );
         isValid = false;
+    } else {
+        setSuccess(nameInput, nameError);
     }
 
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email === "") {
-        emailError.textContent = "Please enter your email.";
+        setError(emailInput, emailError, "Please enter your email.");
         isValid = false;
     } else if (!emailPattern.test(email)) {
-        emailError.textContent = "Please enter a valid email address.";
+        setError(
+            emailInput,
+            emailError,
+            "Please enter a valid email address."
+        );
         isValid = false;
+    } else {
+        setSuccess(emailInput, emailError);
     }
 
 
     const phonePattern = /^[0-9]{10}$/;
 
     if (phone === "") {
-        phoneError.textContent = "Please enter your phone number.";
+        setError(
+            phoneInput,
+            phoneError,
+            "Please enter your phone number."
+        );
         isValid = false;
     } else if (!phonePattern.test(phone)) {
-        phoneError.textContent = "Phone number must contain 10 digits.";
+        setError(
+            phoneInput,
+            phoneError,
+            "Phone number must contain 10 digits."
+        );
         isValid = false;
+    } else {
+        setSuccess(phoneInput, phoneError);
     }
 
 
     if (password === "") {
-        passwordError.textContent = "Please enter a password.";
+        setError(
+            passwordInput,
+            passwordError,
+            "Please enter a password."
+        );
         isValid = false;
     } else if (password.length < 6) {
-        passwordError.textContent = "Password must contain at least 6 characters.";
+        setError(
+            passwordInput,
+            passwordError,
+            "Password must contain at least 6 characters."
+        );
         isValid = false;
+    } else {
+        setSuccess(passwordInput, passwordError);
     }
 
 
     if (confirmPassword === "") {
-        confirmPasswordError.textContent = "Please confirm your password.";
+        setError(
+            confirmPasswordInput,
+            confirmPasswordError,
+            "Please confirm your password."
+        );
         isValid = false;
     } else if (password !== confirmPassword) {
-        confirmPasswordError.textContent = "Passwords do not match.";
+        setError(
+            confirmPasswordInput,
+            confirmPasswordError,
+            "Passwords do not match."
+        );
         isValid = false;
+    } else {
+        setSuccess(confirmPasswordInput, confirmPasswordError);
     }
 
 
     if (isValid) {
         successMessage.textContent = "Account created successfully!";
         registrationForm.reset();
+
+        nameInput.classList.remove("input-success");
+        emailInput.classList.remove("input-success");
+        phoneInput.classList.remove("input-success");
+        passwordInput.classList.remove("input-success");
+        confirmPasswordInput.classList.remove("input-success");
     }
 });
